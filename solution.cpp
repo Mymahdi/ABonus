@@ -5,10 +5,7 @@ using namespace std;
 
 
 //----------------
-long int
-sum_calculate(
-    vector<int> v
-) {
+long int sum_calculate(vector<int> v){
      long int sum = 0;
     for (int i = 0; i < v.size(); i++)
     sum += v[i];
@@ -69,23 +66,24 @@ void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
 /*----------------*/
 int main() {
     int m, n;
-    int    product;
+    int product;
     vector<vector<int> > farm;
     long int harvest = 0;
-    cin>>m>> n;
+    cin >> m >> n;
     farm = vector < vector < int > > (m, vector<int>(n));
-    for(int i = 0 ; i < m ; i++){
+    for(int i = 0 ; i < m ; i++)
         for(int j = 0 ; j < n ; j++){
-            cin >> product;farm[i][j] = product;
+            cin >> product;
+            farm[i][j] = product;
         }
     
-    }
+    
 
     
     
     // solve
     solve(m, n, harvest ,farm);
-    cout<<harvest;
+    cout << harvest;
     return 0;
     cout << "Hello there! I'm unreachable!" << endl;
 } // main
