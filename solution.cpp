@@ -6,7 +6,7 @@ using namespace std;
 
 //----------------
 long int
-Sum(
+sum_calculate(
     vector<int> v
 ) {
      long int sum = 0;
@@ -26,7 +26,7 @@ void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
         vector<long int> row_sums;
 
         for(int i = 0; i < m; i++){
-            sum = Sum(farm[i]);
+            sum = sum_calculate(farm[i]);
             row_sums.push_back(sum);
             sum = 0;
         }
