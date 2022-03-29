@@ -3,14 +3,16 @@
 
 using namespace std;
 
+//-------------------------------
 void get_input(int &m , int &n){
     cin >> m >> n;
 }
 
+//-----------------------------------------------
 void initialize_farm(int m ,int n , vector<vector<int> > &farm){
 
     int product;      
-    
+
     for(int i = 0 ; i < m ; i++)
         for(int j = 0 ; j < n ; j++){
             cin >> product;
@@ -18,6 +20,7 @@ void initialize_farm(int m ,int n , vector<vector<int> > &farm){
         }
     
 }
+//----------------------------------------
 void find_max_row(int m ,int &row ,int &max_row, vector<long int> row_sums){
 
      for(int i = 0; i < m; i++)
@@ -27,7 +30,7 @@ void find_max_row(int m ,int &row ,int &max_row, vector<long int> row_sums){
         }
 }
 
-
+//----------------------------
 void find_max_column(int m ,int n ,int &column ,int &max_column , vector<vector<int> > farm){
 
     int sum = 0;
@@ -44,7 +47,7 @@ void find_max_column(int m ,int n ,int &column ,int &max_column , vector<vector<
         sum = 0;
     }
 }
-//----------------
+//----------------------------
 long int sum_calculate(vector<int> v){
     long int sum = 0;
    
@@ -52,7 +55,7 @@ long int sum_calculate(vector<int> v){
         sum += v[i];
     return sum;
 }
-
+//----------------------------------
 void built_row_sums(int m , vector<long int> &row_sums,vector<vector<int> > farm){
    
     int sum = 0;
@@ -63,7 +66,7 @@ void built_row_sums(int m , vector<long int> &row_sums,vector<vector<int> > farm
             sum = 0;
         }
 }
-
+//---------------------------
 void calculate_harvest(long int &harvest , int &column , int &row ,int m ,int n , int max_column ,int max_row,
     vector<vector<int> > &farm){
 
