@@ -98,22 +98,25 @@ void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
         max_row = 0;
     }
 }
+
+void print_result(long int harvest){
+    cout << harvest;
+}
 /*----------------*/
 int main() {
     int m, n;
-    
     vector<vector<int> > farm;
     long int harvest = 0;
-    get_input(m , n);
-    farm = vector < vector < int > > (m, vector<int>(n));
-    initialize_farm(m ,n , farm);
-    
 
-    
+    get_input(m , n);
+
+    farm = vector < vector < int > > (m, vector<int>(n));
+
+    initialize_farm(m ,n , farm);
     
     // solve
     solve(m, n, harvest ,farm);
-    cout << harvest;
+    print_result(harvest);
+
     return 0;
-    
 } // main
