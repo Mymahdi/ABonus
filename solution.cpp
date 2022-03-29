@@ -66,7 +66,7 @@ void calculate_harvest(long int &harvest , int &column , int &row ,int m ,int n 
 }
 //--------------------------------
 void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
-    long int sum = 0;
+    
     int max_row = 0;
     int max_column = 0;
     int row = 0;
@@ -109,7 +109,5 @@ int main() {
     solve(m, n, harvest ,farm);
     cout << harvest;
     return 0;
-    cout << "Hello there! I'm unreachable!" << endl;
+    
 } // main
-
-// no reason for this comment
