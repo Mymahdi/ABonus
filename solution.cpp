@@ -67,26 +67,26 @@ void built_row_sums(int m , vector<long int> &row_sums,vector<vector<int> > farm
         }
 }
 //---------------------------
-void calculate_harvest(long int &harvest , int &column , int &row ,int m ,int n , int max_column ,int max_row,
+void calculate_harvest(long int &max_harvest , int &column , int &row ,int m ,int n , int max_column ,int max_row,
     vector<vector<int> > &farm){
 
      if(max_column > max_row){
 
-        harvest += max_column;
+        max_harvest += max_column;
         for(int i = 0; i < m; i++)
             farm[i][column] = 0;
         
     }
     else{
 
-        harvest += max_row;
+        max_harvest += max_row;
         for(int j = 0; j < n; j++)
             farm[row][j] = 0;
         
     }
 }
 //--------------------------------
-void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
+void solve(int m, int n, long int& max_harvest , vector<vector<int> > &farm){
     
     int max_row = 0;
     int max_column = 0;
@@ -103,7 +103,7 @@ void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
        
         find_max_column(m ,n ,column ,max_column ,farm);
         
-        calculate_harvest(harvest ,column ,row , m , n , max_column ,max_row,farm);
+        calculate_harvest(max_harvest ,column ,row , m , n , max_column ,max_row,farm);
 
         row = 0;
         column = 0;
@@ -112,14 +112,14 @@ void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
     }
 }
 
-void print_result(long int harvest){
-    cout << harvest;
+void print_result(long int max_harvest){
+    cout << max_harvest;
 }
 /*----------------*/
 int main() {
     int m, n;
     vector<vector<int> > farm;
-    long int harvest = 0;
+    long int max_harvest = 0;
 
     get_input(m , n);
 
@@ -128,8 +128,8 @@ int main() {
     initialize_farm(m ,n , farm);
     
     // solve
-    solve(m, n, harvest ,farm);
-    print_result(harvest);
+    solve(m, n, max_harvest ,farm);
+    print_result(max_harvest);
 
     return 0;
 } // main
