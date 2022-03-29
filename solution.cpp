@@ -3,7 +3,7 @@
 
 using namespace std;
 
-vector<vector<int> > farm;
+
 //----------------
 long int
 Sum(
@@ -15,7 +15,7 @@ Sum(
     return sum;
 }
 //--------------------------------
-void solve(int m, int n, long int& harvest){
+void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
     long int sum = 0;
     int max_row = 0;
     int max_column = 0;
@@ -70,7 +70,7 @@ void solve(int m, int n, long int& harvest){
 int main() {
     int m, n;
     int    product;
-    
+    vector<vector<int> > farm;
     long int harvest = 0;
     cin>>m>> n;
     farm = vector < vector < int > > (m, vector<int>(n));
@@ -84,7 +84,7 @@ int main() {
     
     
     // solve
-    solve(m, n, harvest);
+    solve(m, n, harvest ,farm);
     cout<<harvest;
     return 0;
     cout << "Hello there! I'm unreachable!" << endl;
