@@ -9,7 +9,7 @@ void get_input(int &m , int &n){
 
 void initialize_farm(int m ,int n , vector<vector<int> > &farm){
     int product;      
-        for(int i = 0 ; i < m ; i++)
+    for(int i = 0 ; i < m ; i++)
         for(int j = 0 ; j < n ; j++){
             cin >> product;
             farm[i][j] = product;
@@ -19,11 +19,11 @@ void initialize_farm(int m ,int n , vector<vector<int> > &farm){
 void find_max_row(int m ,int &row ,int &max_row, vector<long int> row_sums){
 
      for(int i = 0; i < m; i++){
-            if (row_sums[i] > max_row) {
-                max_row = row_sums[i];
-                row = i;
-            }
+        if (row_sums[i] > max_row) {
+            max_row = row_sums[i];
+            row = i;
         }
+    }
 }
 
 
@@ -32,15 +32,15 @@ void find_max_column(int m ,int n ,int &column ,int &max_column , vector<vector<
     int sum = 0;
 
     for(int j = 0; j < n; j++){
-            for(int i = 0; i < m; i++){
-                sum += farm[i][j];
-            }
-            if(sum > max_column){
-                max_column = sum;
-                column = j;
-            }
-            sum = 0;
+        for(int i = 0; i < m; i++){
+            sum += farm[i][j];
         }
+        if(sum > max_column){
+            max_column = sum;
+            column = j;
+        }
+        sum = 0;
+    }
 }
 //----------------
 long int sum_calculate(vector<int> v){
@@ -63,17 +63,17 @@ void calculate_harvest(long int &harvest , int &column , int &row ,int m ,int n 
     vector<vector<int> > &farm){
 
      if(max_column > max_row){
-            harvest += max_column;
-            for(int i = 0; i < m; i++){
-                farm[i][column] = 0;
-            }
+        harvest += max_column;
+        for(int i = 0; i < m; i++){
+        farm[i][column] = 0;
         }
-        else{
-            harvest += max_row;
-            for(int j = 0; j < n; j++){
-                farm[row][j] = 0;
-            }
+    }
+    else{
+        harvest += max_row;
+        for(int j = 0; j < n; j++){
+            farm[row][j] = 0;
         }
+    }
 }
 //--------------------------------
 void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
