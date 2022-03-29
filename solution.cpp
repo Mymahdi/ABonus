@@ -3,8 +3,19 @@
 
 using namespace std;
 
+void get_input(int &m , int &n){
+    cin >> m >> n;
+}
 
-
+void initialize_farm(int m ,int n , vector<vector<int> > &farm){
+    int product;      
+        for(int i = 0 ; i < m ; i++)
+        for(int j = 0 ; j < n ; j++){
+            cin >> product;
+            farm[i][j] = product;
+        }
+    
+}
 void find_max_row(int m ,int &row ,int &max_row, vector<long int> row_sums){
 
      for(int i = 0; i < m; i++){
@@ -90,17 +101,12 @@ void solve(int m, int n, long int& harvest , vector<vector<int> > &farm){
 /*----------------*/
 int main() {
     int m, n;
-    int product;
+    
     vector<vector<int> > farm;
     long int harvest = 0;
-    cin >> m >> n;
+    get_input(m , n);
     farm = vector < vector < int > > (m, vector<int>(n));
-    for(int i = 0 ; i < m ; i++)
-        for(int j = 0 ; j < n ; j++){
-            cin >> product;
-            farm[i][j] = product;
-        }
-    
+    initialize_farm(m ,n , farm);
     
 
     
