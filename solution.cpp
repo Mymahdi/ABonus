@@ -18,7 +18,7 @@ Sum(
 void solve(int m, int n, long int& harvest){
     long int sum = 0;
     int max_row = 0;
-    int maxColumn = 0;
+    int max_column = 0;
     int row = 0;
     int column = 0;
 
@@ -42,14 +42,14 @@ void solve(int m, int n, long int& harvest){
             for(int i = 0; i < m; i++){
                 sum += farm[i][j];
             }
-            if(sum > maxColumn){
-                maxColumn = sum;
+            if(sum > max_column){
+                max_column = sum;
                 column = j;
             }
             sum = 0;
         }
-        if(maxColumn > max_row){
-            harvest += maxColumn;
+        if(max_column > max_row){
+            harvest += max_column;
             for(int i = 0; i < m; i++){
                 farm[i][column] = 0;
             }
@@ -62,7 +62,7 @@ void solve(int m, int n, long int& harvest){
         }
         row = 0;
         column = 0;
-        maxColumn = 0;
+        max_column = 0;
         max_row = 0;
     }
 }
